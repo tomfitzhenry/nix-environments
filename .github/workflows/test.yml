@@ -10,3 +10,11 @@ jobs:
     - uses: cachix/install-nix-action@v31
     - name: eval
       run: NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz nix-instantiate default.nix
+
+  coreboot:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - uses: cachix/install-nix-action@v31
+    - name: Build and test coreboot + EDK2 in QEMU
+      run: ./envs/coreboot/build-and-test-qemu.sh
