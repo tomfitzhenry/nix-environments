@@ -7,6 +7,10 @@ addIdfEnvVars() {
         export IDF_TOOLS_PATH="$IDF_PATH/tools"
         export IDF_PYTHON_CHECK_CONSTRAINTS=no
         export IDF_PYTHON_ENV_PATH="$(readlink $IDF_PATH/python-env)"
+        # ESP-IDF's own activation (tools/activate.py) exports this; the
+        # idf-component-manager 3.x reads it (without the 'v' prefix) and
+        # crashes on idf.py startup when it is unset.
+        export ESP_IDF_VERSION="$(sed -n 's/^v//p' "$1/version.txt")"
         addToSearchPath PATH "$IDF_TOOLS_PATH"
 
         # Extra paths from `export.sh` in the ESP-IDF repo.
