@@ -4,6 +4,7 @@
   arduino = import ./envs/arduino/shell.nix { inherit pkgs; };
   buildroot = import ./envs/buildroot/shell.nix { inherit pkgs; };
   cc2538-bsl = import ./envs/cc2538-bsl/shell.nix { inherit pkgs; };
+  esp-idf = (import ./envs/esp-idf/shell.nix { inherit pkgs; }).env;
   firefox = import ./envs/firefox/shell.nix { inherit pkgs; };
   infinisim = import ./envs/infinisim/shell.nix { inherit pkgs; };
   git = import ./envs/git/shell.nix { inherit pkgs; };

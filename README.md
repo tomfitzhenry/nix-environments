@@ -21,6 +21,7 @@ What environments should **not** include:
 |-------------------------------------------------|-----------------------|
 | [Arduino](envs/arduino)                         | `arduino`             |
 | [cc2538-bsl](envs/cc2538-bsl)                   | `cc2538-bsl`          |
+| [ESP-IDF](envs/esp-idf)                         | `esp-idf`             |
 | [Jruby](envs/jruby)                             | `jruby`               |
 | [Firefox](envs/firefox)                         | `firefox`             |
 | [Git](envs/git)                                 | `git`                 |
